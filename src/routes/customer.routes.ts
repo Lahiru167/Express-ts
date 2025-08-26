@@ -1,13 +1,13 @@
 import { Router, Request, Response } from "express";
 
-export class GreetingRoutes {
-  private static instance: GreetingRoutes;
+export class CustomerRoutes {
+  private static instance: CustomerRoutes;
   public router: Router;
-  public static getInstance(): GreetingRoutes {
-    if (!GreetingRoutes.instance) {
-      GreetingRoutes.instance = new GreetingRoutes();
+  public static getInstance(): CustomerRoutes {
+    if (!CustomerRoutes.instance) {
+      CustomerRoutes.instance = new CustomerRoutes();
     }
-    return GreetingRoutes.instance;
+    return CustomerRoutes.instance;
   }
 
   private constructor() {
@@ -17,7 +17,7 @@ export class GreetingRoutes {
 
   private setupRoutes() {
     this.router.get("/", (req: Request, res: Response) => {
-      res.send("Hello, World!");
+      res.send("Customer route");
     });
 
     this.router.post("/", (req: Request, res: Response) => {

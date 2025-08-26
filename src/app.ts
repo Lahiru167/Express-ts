@@ -1,14 +1,10 @@
 import express, { Application } from "express";
-import greetingRoutes from "./routes/greeting.routes";
+import { Routes } from "./routes/routes";
 
 const app: Application = express();
 
 app.use(express.json());
-app.use("/greeting", greetingRoutes);
-
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
+app.use("/api", Routes.getInstance().router);
 
 const PORT = 3000;
 app.listen(PORT, () => {
