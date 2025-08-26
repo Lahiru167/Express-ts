@@ -1,8 +1,10 @@
 import express, { Application } from "express";
+import greetingRoutes from "./routes/greeting.routes";
 
 const app: Application = express();
 
 app.use(express.json());
+app.use("/greeting", greetingRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello World");
