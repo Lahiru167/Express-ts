@@ -17,7 +17,7 @@ export class CustomerRoutes {
 
   private setupRoutes() {
     this.router.get("/", (req: Request, res: Response) => {
-      res.send("Customer route");
+      res.send("hello world customer");
     });
 
     this.router.post("/", (req: Request, res: Response) => {
